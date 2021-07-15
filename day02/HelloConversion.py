@@ -1,3 +1,5 @@
+import math as m
+
 # 資料的轉換
 chinese = "90"
 math    = "80"
@@ -12,8 +14,13 @@ print("sum2 : ", sum2)
 
 # 資料的轉換(Lab)
 # 求 bmi 取到小數點 2 位
-print("計算 BMI")
-h, w = 180.5, 85
+h, w = "180.5", "85"
+print(type(h), type(w))
+h = float(h)
+w = float(w)
+print(type(h), type(w))
 bmi = w / (h/100)**2
-print(h, w, bmi)
-print("身高:%.1f 體重:%.1f BMI:%.2f" % (h, w, bmi))
+bmi = w / m.pow(h/100, 2)
+print(bmi, bmi)
+print("%.2f" % bmi)
+
