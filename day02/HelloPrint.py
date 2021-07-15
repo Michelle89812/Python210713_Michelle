@@ -1,3 +1,5 @@
+import math
+
 name = 'height'
 value = 170
 print(name, value)  # 中間預設使用空白隔開
@@ -43,3 +45,16 @@ print("------------------------------")
 print("%-10s%5d%7d%10d" % (symbol1, price1, amount1, total1))
 print("%-10s%5d%7d%10d" % (symbol2, price2, amount2, total2))
 
+# 使用 format
+print("身高:{0} 體重{1}".format(170.0, 60.0))
+
+# 計算兩點間的距離
+x1, y1 = 3, 5
+x2, y2 = 500, 880
+
+d = math.sqrt((x1-x2)**2 - (y1-y2)**2)
+print("{}".format(d))
+print("{}".format("%.2f" % d))
+#  "%.2f" % d -> 資料型態 str
+print(type("%.2f" % d))
+print("{:,}".format(float("%.2f" % d)))
