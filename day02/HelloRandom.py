@@ -13,3 +13,4 @@ n2 = r.randint(0, 9)
 n3 = r.randint(0, 9)
 n4 = r.randint(0, 9)
 print(n1, n2, n3, n4)
+

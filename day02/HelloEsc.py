@@ -12,7 +12,7 @@ print("小明\n\t國文分數100分\n\t數學分數90分")
 
 # \ 續行符號
 a = 10; b = 20; c = 30
-d = a * b /c + b - a / b + a + b + c + b * a / c
+d = a * b / c * b - a * a / b + a + b + c + b * a / c
 print(d)
 d = a * b / c * b \
     - a * a / b + \
