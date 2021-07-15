@@ -42,4 +42,4 @@ print(symbol2, price2, amount2, total2)
 print("------------------------------")
 print("%-10s%5d%7d%10d" % (symbol1, price1, amount1, total1))
 print("%-10s%5d%7d%10d" % (symbol2, price2, amount2, total2))
-# 匯率列表
+
