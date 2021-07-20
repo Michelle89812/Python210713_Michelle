@@ -4,3 +4,12 @@
 while 佈林判斷:
     程式區塊
 '''
+import random
+while True:
+    score = random.randint(0, 100)
+    if score >= 60:
+        print("pass score:", score)
+    else:
+        print("fail score:", score)
+        break
+
