@@ -16,4 +16,3 @@ for x in range(1, 10):
         sum = x * y
         print("%dx%d=%d" % (x, y, sum), end="\t")
     print()
-
