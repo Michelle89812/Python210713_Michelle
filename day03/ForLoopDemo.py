@@ -1,5 +1,6 @@
 '''
 迴圈 for-in、while
+知道要執行的次數
 for 變數 in range串列:
     程式區塊
 '''
