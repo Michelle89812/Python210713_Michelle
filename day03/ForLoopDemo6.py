@@ -11,4 +11,4 @@ for i in range(2, int(x/2+1)):
         isPrime = False
         break
 
-print("%d 是否是質數: %s" % (x , isPrime))
+print("%d 是否是質數: %s" % (x, isPrime))
