@@ -16,7 +16,7 @@ if __name__ == '__main__':
         while True:
             bet = int(input('請下注 (金額不可超過 %d):' % balance))
             if bet > balance:
-                print('下注金額: %d 超過目前可用餘額: %d' % (bet, balance))
+                print('下注金額: %d 目前現金餘額: %d' % (bet, balance))
                 continue
             elif bet <= 0:
                 print("下注金額不正確")
