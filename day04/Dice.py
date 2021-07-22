@@ -7,11 +7,16 @@ import random
 if __name__ == '__main__':
     balance = 100 # 現金餘額
     while True:
+        if balance <= 0:
+            print('現金餘額 $%d 不足，請離場~' % balance)
+            break
         guess = int(input('現金前餘額: $%d , 猜大小, 大=1, 小=2, 離開=0: ' % balance))
         # 判斷 guess
         if guess == 0:
             print('離開')
             break
+
+
         # 下注:
         while True:
             bet = int(input('請下注 (金額不可超過 %d):' % balance))
@@ -41,6 +46,7 @@ if __name__ == '__main__':
             else:
                 print('骰子點數: %d 猜小猜錯了' % dice_number)
                 balance = balance - bet
+
         else:
             print('資料不正確，請重新輸入')
             continue
