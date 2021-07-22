@@ -8,7 +8,7 @@ if __name__ == '__main__':
         target_floor = input('您現在在 %d 樓。請問要去哪一樓(輸入 0 可離開電梯)?' % (current_floor))
         target_floor = int(target_floor)
 
-        #判斷 target_floor
+        # 判斷 target_floor
         if target_floor == 0:
             break # 離開電梯
 
