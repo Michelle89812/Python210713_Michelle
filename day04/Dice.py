@@ -11,15 +11,18 @@ if __name__ == '__main__':
         # 判斷 guess
         if guess == 0:
             print('離開')
-            break;
+            break
         # 下注:
-        bet = int(input('請下注 (金額不可超過 %d):' % balance))
-        if bet > balance:
-            print('下注金額: %d 超過目前可用餘額: %d' % (bet, balance))
-            continue
-        elif bet <= 0:
-            print("下注金額不正確")
-            continue
+        while True:
+            bet = int(input('請下注 (金額不可超過 %d):' % balance))
+            if bet > balance:
+                print('下注金額: %d 超過目前可用餘額: %d' % (bet, balance))
+                continue
+            elif bet <= 0:
+                print("下注金額不正確")
+                continue
+            else:
+                break
 
         # 擲骰子
         dice_number = random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6)
