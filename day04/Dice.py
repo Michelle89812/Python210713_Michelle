@@ -5,9 +5,10 @@
 import random
 
 if __name__ == '__main__':
-    balance = 100
+    balance = 100 # 現金餘額
     while True:
         guess = int(input('現金前餘額: $%d , 猜大小, 大=1, 小=2, 離開=0: ' % balance))
+        # 判斷 guess
         if guess == 0:
             print('離開')
             break;
