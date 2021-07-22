@@ -10,10 +10,10 @@ if __name__ == '__main__':
 
         # 判斷 target_floor
         if target_floor == 0:
-            break # 離開電梯
+            break  # 離開電梯
 
         if target_floor == current_floor:
-            continue # 重新選擇
+            continue  # 重新選擇
 
         if target_floor < 1 or target_floor > 7:
             print('請輸入介於 1-7 的整數')
