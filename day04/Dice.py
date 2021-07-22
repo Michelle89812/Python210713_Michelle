@@ -2,7 +2,7 @@
 #  有三顆骰子, 點數組合
 #  3, 4, 5, 6, 7, 8, 9, 10 <-- 猜小
 #  11,12,13,14,15,16,17,18 <-- 猜大
-import random
+import random as r
 
 if __name__ == '__main__':
     dice_log = []  # 用來記錄每一次骰子的點數(dice_number)
@@ -35,7 +35,7 @@ if __name__ == '__main__':
                 break
 
         # 擲骰子
-        dice_number = random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6)
+        dice_number = r.randint(1, 6) + r.randint(1, 6) + r.randint(1, 6)
         dice_log.append(dice_number)
 
         if guess == 1:  # 猜大
