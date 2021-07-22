@@ -31,3 +31,4 @@ if __name__ == '__main__':
 
     # 之後透過詢問可以延續拿牌,連續計算分數 (Homework)
     response = input('是否延續拿牌(Y or N): ')
+
