@@ -18,10 +18,17 @@ import random
 
 ans = random.randint(1, 99)
 min, max = 0, 100
-
+max_amount = 7
+cur_amount = 0
 while True:
-    #  User 猜
-    guess = input('請在 %d ~ %d 之間猜一個數字: ' % (min, max))
+    # 次數 +1
+    cur_amount = cur_amount + 1
+    if cur_amount > max_amount:
+        print('次數用完，程式結束。答案: %d !' % ans)
+        break
+
+    #  User 猜 (最多猜 7 次)
+    guess = input('( %d/%d ) 請在 %d ~ %d 之間猜一個數字: ' % (cur_amount, max_amount, min, max))
     guess = int(guess)  # 將字串轉數字
     # 驗證範圍 ?
     if (guess <= min or guess >= max):
@@ -36,5 +43,6 @@ while True:
     else:
         print('恭喜猜對了 !')
         break  # While迴圈結束
+
 
 
