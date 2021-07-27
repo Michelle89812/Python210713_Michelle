@@ -24,3 +24,11 @@ scores = list(scores)   # 將 tuple 轉 list
 print(type(scores), scores)
 scores = tuple(scores)  # 將 list 轉 tuple
 print(type(scores), scores)
+
+# set 列表
+no = [1, 3, 5, 2, 3, 1]
+no = set(no)
+no.add(7)
+no.add(1)
+print(type(no), len(no), no)
+
