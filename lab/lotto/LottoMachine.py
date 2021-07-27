@@ -5,6 +5,9 @@ Lotto 機器
       輸入2 -> 開獎四星彩 : 4 個 0~9 可以重複的數字
       輸入0 -> Exit
 '''
+import random as r
+import sys
+
 def menu():
     print('--------------')
     print('1. 今彩539')
@@ -20,7 +23,10 @@ def lotto539():
     pass
 
 def lotto4star():
-    pass
+    lotto = []
+    for x in range(4):
+        lotto.append(r.randint(0, 9))
+    print('四星彩:', lotto)
 
 if __name__ == '__main__':
     while True:
@@ -29,9 +35,9 @@ if __name__ == '__main__':
         # User 選擇
         choice = userChoice()
         if choice == 1:
-            pass
+            lotto539()
         elif choice == 2:
-            pass
+            lotto4star()
         elif choice == 0:
             print('離開程式')
             break
@@ -40,3 +46,5 @@ if __name__ == '__main__':
             continue
 
 
+        print('Enter...')
+        sys.stdin.read(1)
