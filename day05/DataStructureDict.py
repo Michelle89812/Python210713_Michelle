@@ -13,3 +13,29 @@ print('數學:', scores.get('數學'))
 print('科目(keys):', scores.keys())
 print('分數(values):', scores.values())
 
+# update (合併二個 dict)
+scores1 = {'國文':100, '數學':90}
+scores2 = {'英文':70, '歷史':58, '國文':90}
+scores1.update(scores2)
+print(scores1)
+
+# 總分與平均?
+scores = scores1.values()
+print(type(scores), scores)
+print(list(scores))
+scoresSum = sum(list(scores))
+print(scoresSum, scoresSum/len(scores))
+
+# 我的作法
+score = scores1.values()
+print('總分:', sum(score))
+print('平均:', sum(score)/len(score))
+
+# for-in
+sumScore = 0
+scores = {'國文':100, '數學':90, '英文':90, '數學':60}
+print(scores)
+for key in scores:
+    print(type(key), key, scores[key])
+    sumScore = sumScore + scores[key]
+print(sumScore, sumScore/len(scores))
