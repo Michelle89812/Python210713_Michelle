@@ -20,7 +20,11 @@ def userChoice():
     return choice
 
 def lotto539():
-    pass
+    lotto = set()
+    while len(lotto) < 5:
+        lotto.add(r.randint(1, 39))
+
+    print('539:', lotto)
 
 def lotto4star():
     lotto = []
