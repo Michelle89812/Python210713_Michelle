@@ -1,3 +1,4 @@
+import re
 # split 與 dict
 
 exam = '國文=100,數學=90,英文=80'
@@ -17,3 +18,12 @@ print(s, s_list)
 s_int_list = list(map(int, s_list))
 print(s_list)
 print(s_int_list)
+
+# 多符號切割
+# split() 只允許單一符號切割
+# re.split() 支援多符號切割
+word = 'Hello!你今天好嗎?再會。20210729'
+# ['Hello', '你今天好嗎', '再會', '20210729']
+word_list = re.split('!|？|。', word)
+print(word_list)
+
