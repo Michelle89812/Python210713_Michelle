@@ -8,5 +8,10 @@
     "name":"Mary",
     "age":17,
     "profile":{"w":55.0, "h":162.5}
+  },
+  {
+    "name":"Jack",
+    "age":19,
+    "profile":{"w":70.5, "h":165.5}
   }
 ]
