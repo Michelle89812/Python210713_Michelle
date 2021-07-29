@@ -20,6 +20,7 @@ print(bmi)
 
 x = '[{"name":"John", "age":18, "profile":{"w":60.0, "h":170.0}},' \
     '{"name":"Mary", "age":17, "profile":{"w":55.0, "h":162.5}}]'
+
 # 計算出 John, Mary 的 bmi(小數點第二位) = ?
 people = json.loads(x)
 print(type(people))
