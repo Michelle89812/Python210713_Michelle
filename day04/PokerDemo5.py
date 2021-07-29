@@ -23,12 +23,19 @@ if __name__ == '__main__':
     # 遊戲開始先拿到兩張牌
     my_cards = []  # 目前手中的牌
     my_cards.append(pokers.pop(0))
-    my_cards.append(pokers.pop(0))
 
-    # 計算每一張牌的分數
-    my_score = getScore(my_cards)
-    print(my_cards, my_score)
 
     # 之後透過詢問可以延續拿牌,連續計算分數 (Homework)
-    response = input('是否延續拿牌(Y or N): ')
-
+    while True:
+        # 計算每一張牌的分數
+        my_score = getScore(my_cards)
+        print(my_cards, my_score)
+        # 分數是否超過 10.5
+        if my_score > 10.5:
+            print('爆了!')
+            break
+        resp = input('繼續拿牌嗎(y/n)? ')
+        if resp == 'y':
+            my_cards.append(pokers.pop(0))
+        else:
+            break
