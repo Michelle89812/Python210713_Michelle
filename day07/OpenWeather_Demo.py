@@ -27,7 +27,7 @@ print(datetime.datetime.utcfromtimestamp(dt))
 # 5. 取得 icon
 icon = root['weather'][0]['icon']
 icon_url = 'https://openweathermap.org/img/wn/%s@4x.png' % icon
-icon_data = requests.get(icon_url).content   # 非文字檔用 content
+icon_data = requests.get(icon_url).content   # 非文字檔用 content, 文字檔用 txt
 print(icon_data)
 # 6. 將 icon_data 存成 png 檔案
 file = open('weather_icon.png', 'wb')
