@@ -17,11 +17,10 @@ temp = root['main']['temp'] - 273.15
 feels_like = root['main']['feels_like'] - 273.15
 humidity = root['main']['humidity']
 dt = root['dt']
-
 # 4. 列印資料
-print(datetime.datetime.utcfromtimestamp(dt))
 print('地區: %s' % q)
 print('天氣概述: %s' % description)
 print('溫度(°C): %.2f' % temp)
 print('體感(°C): %.2f' % feels_like)
 print('濕度(%%): %d' % humidity)
+print(datetime.datetime.utcfromtimestamp(dt))
