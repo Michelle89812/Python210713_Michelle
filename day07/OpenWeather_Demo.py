@@ -24,3 +24,11 @@ print('溫度(°C): %.2f' % temp)
 print('體感(°C): %.2f' % feels_like)
 print('濕度(%%): %d' % humidity)
 print(datetime.datetime.utcfromtimestamp(dt))
+# 5. 取得 icon
+icon = root['weather'][0]['icon']
+icon_url = 'https://openweathermap.org/img/wn/%s@4x.png' % icon
+icon_data = requests.get(icon_url).content   # 非文字檔用 content
+print(icon_data)
+# 6. 將 icon_data 存成 png 檔案
+file = open('weather_icon.png', 'wb')
+file.write(icon_data)
