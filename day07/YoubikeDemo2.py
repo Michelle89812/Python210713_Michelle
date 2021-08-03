@@ -14,6 +14,25 @@ for no in range(2001, 2412):
     except:
         pass
 
+# 我所在地的經緯度 24.99047, 121.31187 桃園市民權路6號
+my_lat = 24.99047
+my_lng = 121.31187
+d = 400  # (公尺)m
+for no in range(2001, 2412):
+    sno = str(no)
+    try:
+        sna = youbike['retVal'][sno]['sna']
+        lat = float(youbike['retVal'][sno]['lat'])
+        lng = float(youbike['retVal'][sno]['lng'])
+        m, km = u.distance(my_lat, my_lng, lat, lng)
+        tot = int(youbike['retVal'][sno]['tot'])
+        sbi = int(youbike['retVal'][sno]['sbi'])
+        bemp = int(youbike['retVal'][sno]['bemp'])
+        if m <= d:
+            print(sno, sna, "%dm" % int(m), "%.1fkm" % km, tot, sbi, bemp)
+    except:
+        pass
+
 
 
 
