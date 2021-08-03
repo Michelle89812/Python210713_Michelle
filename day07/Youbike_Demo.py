@@ -1,4 +1,5 @@
 import json
+import day07.Util as u
 file = open('桃園公共自行車即時服務資料.json', 'r', encoding='utf-8')
 data = file.read()
 youbike = json.loads(data)
@@ -12,5 +13,7 @@ print(youbike['retVal']['2001']['lat'])
 print(youbike['retVal']['2001']['lng'])
 
 # 我所在地的經緯度 25.051249173402592, 121.28611345321114 蘆竹區聯福街聯福巷61-10號
+print(u.distance(25.051249173402592, 121.28611345321114, 24.968128, 121.194666))
+
 
 
