@@ -1,5 +1,7 @@
 import json
 import requests
+import datetime
+
 key = '6f6e5160e0d2b4b019e1ccff3232b603'  # 用自己的 key
 q = 'taoyuan,tw'
 url = 'https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s' % (q, key)
@@ -14,7 +16,10 @@ description = root['weather'][0]['description']
 temp = root['main']['temp'] - 273.15
 feels_like = root['main']['feels_like'] - 273.15
 humidity = root['main']['humidity']
+dt = root['dt']
+
 # 4. 列印資料
+print(datetime.datetime.utcfromtimestamp(dt))
 print('地區: %s' % q)
 print('天氣概述: %s' % description)
 print('溫度(°C): %.2f' % temp)
