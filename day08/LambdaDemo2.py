@@ -18,3 +18,8 @@ if __name__ == '__main__':
     max_value = lambda x, y: x if x > y else y
     result = max_value(a, b) * 2
     print(result)
+    # _______________________________________
+    # lambda 嵌套
+    max_value = lambda x, y: x if x > y else y
+    result = lambda x : x * 2
+    print(result(max_value(a, b)))
