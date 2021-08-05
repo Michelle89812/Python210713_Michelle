@@ -4,14 +4,13 @@
 
 def add(scores, x):
     for i in range(0, len(scores)):
-        scores[i] = scores[i] + 10
+        scores[i] += 10
 
 
 def add(x):
     global scores
     for i in range(0, len(scores)):
-        scores[i] = scores[i] + 10
-
+        scores[i] += 10
 
 if __name__ == "__main__":
     scores = [50, 60, 70]
