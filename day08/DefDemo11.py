@@ -3,6 +3,7 @@
 def getSum(*scores):
     return sum(scores)
 
+
 # 座號、 總分、 學生資料
 def printStudentInfo(no, *scores, **info):
     print('座號:', no)
