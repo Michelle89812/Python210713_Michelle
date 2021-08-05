@@ -22,4 +22,5 @@ if __name__ == '__main__':
     # lambda 嵌套
     max_value = lambda x, y: x if x > y else y
     result = lambda x : x * 2
+    print(result(15))
     print(result(max_value(a, b)))
