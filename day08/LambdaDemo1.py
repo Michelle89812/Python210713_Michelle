@@ -21,3 +21,6 @@ if __name__ == '__main__':
     print(70, result(70))
     print(80, result(80))
     print(40, result(40))
+    # ____________________________________________
+    temp = lambda: print('現在溫度 26.6 度')
+    temp()
