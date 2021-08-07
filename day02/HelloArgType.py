@@ -14,6 +14,6 @@ print(keyword.kwlist)
 amount = 100
 print("amount: ", amount)
 
-del amount
+# del amount
 
 print("amount: ", amount)  # 錯誤訊息 : amount' is not defined
