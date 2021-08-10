@@ -3,6 +3,9 @@ class Human:
     age = 0
     sex = ''
 
+    def __str__(self) -> str:
+        return self.name + ',' + str(self.age) + ',' + self.sex
+
 
 if __name__ == '__main__':
     h1 = Human()  # 建立物件
