@@ -1,5 +1,6 @@
 from day10 import Bank
 
+# 存款/提款
 if __name__ == '__main__':
     account = Bank.Account('Vincent', 30000)
     account.printBalance()
