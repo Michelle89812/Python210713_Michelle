@@ -2,6 +2,10 @@ class Account:
     name      = ''  # 公有屬性
     __balance = 0   # 私有屬性
 
+    def __init__(self, name, balance) -> None:
+        self.name = name
+        if balance > 0:
+            self.__balance = balance
 
     def saving(self, amount):  # 存款
         if amount > 0:
