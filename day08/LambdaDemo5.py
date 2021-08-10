@@ -31,3 +31,8 @@ dict2 = {
     6: lambda: print('D')
 }
 dict2.get(score // 10, lambda: print('E'))()
+
+        #  0    1    2    3    4    5    6    7    8    9    10
+levels = ['E', 'E', 'E', 'E', 'E', 'E', 'D', 'C', 'B', 'A', 'A']
+dict3 = {'level': lambda n: print(levels[n//10])}
+dict3.get('level')(score)
