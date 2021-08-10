@@ -11,6 +11,7 @@ def hotdog():
 def egg():
     print('我是雞蛋')
 
+
 def ham(func):
     print('我是火腿')
     return func
