@@ -22,6 +22,7 @@ if __name__ == '__main__':
     student1 = Student('John', 18, '男', 1, '一年級')
     student2 = Student('Mary', 19, '女', 2, '二年級')
     student3 = Student('Bobo', 20, '女', 3, '三年級')
+
     students = [student1, student2, student3]
 
     for student in students:
