@@ -4,6 +4,10 @@ from lab.login.Dao import UserDao
 class LoginError(Exception):
     def __init__(self, message):
         super.__init__(message)
+        self.message = message
+
+    def __str__(self):
+        return '登入錯誤的原因: %s' % self.message
 
 class LoginService:
     __dao = UserDao()
@@ -14,11 +18,9 @@ class LoginService:
         if user is None:
             e = LoginError('查無此人')
             raise e
-            # return False  # 查無此人
         else:
             # 檢查密碼
             if user.password == password:
-                print('登入成功')
                 return True
             else:
                 e = LoginError('登入失敗')
