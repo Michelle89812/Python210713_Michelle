@@ -5,6 +5,7 @@ def print_users(users):
         print(user)
     print()
 
+
 if __name__ == '__main__':
     service = UserService()
     # 查詢所有 user
