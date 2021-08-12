@@ -3,6 +3,9 @@ def input_number():
         x = int(input('請輸入分子: '))
         y = int(input('請輸入分母: '))
         z = x / y
+        # 規定 z 不可以 = 0
+        if z == 0:
+            raise Exception('規定計算結果不可以 = 0')  # 自行拋出例外
 
     except ValueError as e:
         print('錯誤原因:', e)
@@ -20,7 +23,7 @@ def input_number():
         print('其他的錯誤，程式結束!')
         return
     else:  # 若無錯誤則執行
-        print(x, '/', y, '=', z)
+        print('計算結果: ', x, '/', y, '=', z)
     finally:  # 不論是否有錯誤，都要執行
         print('我一定要執行')
 
