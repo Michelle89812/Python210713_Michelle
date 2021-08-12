@@ -28,7 +28,7 @@ class LoginService:
                 raise e  # 登入失敗
 
 class UserService:
-    __dao = UserDao
+    __dao = UserDao()
 
     def add(self, username, password):
         user = User(username, password)
