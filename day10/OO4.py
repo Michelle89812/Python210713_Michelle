@@ -3,14 +3,15 @@ class Engine:
         self.power = power
 
     def __str__(self) -> str:
-        return 'engine power: %d ' % (self.power)
+        return 'engine power: %d ' % self.power
+
 
 class Tires:
     def __init__(self, count) -> None:
         self.count = count
 
     def __str__(self) -> str:
-        return 'tires count: %d ' % (self.count)
+        return 'tires count: %d ' % self.count
 
 
 class Car(Engine, Tires):
@@ -21,8 +22,8 @@ class Car(Engine, Tires):
 
     def __str__(self) -> str:
         return Engine.__str__(self) + \
-                Tires.__str__(self) + \
-                'name: %s ' % (self.name)
+               Tires.__str__(self) + \
+               'name: %s ' % self.name
 
 
 if __name__ == '__main__':
