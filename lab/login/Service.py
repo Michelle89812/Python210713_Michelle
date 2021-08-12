@@ -1,5 +1,7 @@
 # 服務登入所有相關作業
 from lab.login.Dao import UserDao
+from lab.login.Model import User
+
 
 class LoginError(Exception):
     def __init__(self, message):
@@ -24,3 +26,13 @@ class LoginService:
             else:
                 e = LoginError('登入失敗')
                 raise e  # 登入失敗
+
+class UserService:
+    __dao = UserDao
+
+    def add(self, username, password):
+        user = User(username, password)
+        self.__dao.add_user(user)
+
+    def get_users(self):
+        return self.__dao.find_all_user()
