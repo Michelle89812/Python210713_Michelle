@@ -13,8 +13,14 @@ class UserDao:
                 return user
         return None
 
+    # 查詢
     def find_all_user(self):
         return self.__users
 
+    # 新增
     def add_user(self, user):
         self.__users.append(user)
+
+    # 修改  (HW)
+
+    # 刪除  (HW)
