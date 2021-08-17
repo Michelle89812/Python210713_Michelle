@@ -27,6 +27,10 @@ class UserDao:
         if user is not None:
             user.password = new_password
             print('密碼修改成功')
-
+        else:
+            print('密碼修改失敗')
 
     # 刪除  (HW)
+    def delete_user(self, user):
+        self.__users.remove(user)
+        print('刪除成功')
