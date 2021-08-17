@@ -12,4 +12,4 @@ depts = cursor.fetchall()
 for dept in depts:
     id   = dept[0]  # dept_id
     name = dept[1]  # dept_name
-    print('%d\t%s\t' % (dept[0], dept[1]))
+    print('%d\t%s\t' % (id, name))
