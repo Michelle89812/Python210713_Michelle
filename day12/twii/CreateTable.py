@@ -3,6 +3,7 @@ import sqlite3
 
 sql = 'create table if not exists twii(' \
       'id integer primary key autoincrement,' \
+      'report_date integer,' \
       'stock_code varchar (10),' \
       'securities_name varchar (20),' \
       'yield_rate double,' \

@@ -19,6 +19,7 @@ def getList(date):
             # print(tuple(rows))
     return list
 
+
 if __name__ == '__main__':
     list = getList("20210819")
     print(list)
