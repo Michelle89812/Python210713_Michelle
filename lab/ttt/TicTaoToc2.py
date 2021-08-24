@@ -17,9 +17,19 @@ def play():
     # 使用者玩「O」
     n = int(input('請輸入位置 (0~8): '))
     if n == -1:
-        return False
+        return False  # 離開
     ttt[n//3][n%3] = 'O'
-    return True
+
+    # 電腦玩「X」
+    print('電腦計算中...')
+    t.sleep(2)
+    while True:
+        n = r.randint(0, 8)
+        if ttt[n // 3][n % 3] == ' ':
+            ttt[n // 3][n % 3] = 'X'
+            break
+
+    return True  # 繼續玩
 
 
 if __name__ == '__main__':
