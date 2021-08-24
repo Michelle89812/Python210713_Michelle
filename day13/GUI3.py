@@ -1,7 +1,7 @@
 # 放入視窗元件
 import tkinter
 import time
-import threading
+import threading  # 執行緒
 from datetime import datetime
 '''
 +-----------+
@@ -20,7 +20,6 @@ def update_time():
             time.sleep(1)
         except:
             break
-
 
 
 def win_exit():
