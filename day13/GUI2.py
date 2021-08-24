@@ -17,7 +17,7 @@ def win_exit():
 
 win = tkinter.Tk()
 
-win.title('我的小視窗')
+win.title('我的小視窗2')
 win.geometry('400x300')
 
 label = tkinter.Label(win,
