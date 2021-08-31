@@ -37,7 +37,7 @@ for (x, y, w, h) in faces:                 # (B  G   R),  2: 線框寬度
         roi_gray,
         scaleFactor=1.1,
         minNeighbors=5,
-        minSize=(30, 30),
+        minSize=(10, 10),
         flags=cv2.CASCADE_SCALE_IMAGE
     )
     for (ex, ey, ew, eh) in eyes:
@@ -58,6 +58,10 @@ for (x, y, w, h) in faces:                 # (B  G   R),  2: 線框寬度
 
 # 將 frame 顯示出來
 cv2.imshow('my window', frame)
+
+# 存檔
+cv2.imwrite('./result/Smile.jpg', frame)
+
 
 # 按下任一鍵離開程式
 c = cv2.waitKey(0)
