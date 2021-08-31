@@ -1,8 +1,11 @@
 import cv2
-
+'''
+偵測人臉 「內」 的眼睛
+'''
 # 人臉特徵檔
 face_Cascade = cv2.CascadeClassifier('./xml/haarcascade_frontalface_alt.xml')
-
+# 眼睛特徵檔
+eyes_Cascade = cv2.CascadeClassifier('./xml/haarcascade_eye.xml')
 # 讀檔
 frame = cv2.imread('./image/test.jpg')
 
@@ -22,6 +25,18 @@ print(faces)
 # 在 face 周圍畫上矩形框
 for (x, y, w, h) in faces:                 # (B  G   R),  2: 線框寬度
     cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 2)
+    # 進行眼部偵測
+    roi_gray = gray[y:y+h, x:x+w]     # 人臉區域(灰階)
+    roi_color = frame[y:y+h, x:x+w]   # 人臉區域(彩色)
+    eyes = eyes_Cascade.detectMultiScale(
+        roi_gray,
+        scaleFactor=1.1,
+        minNeighbors=5,
+        minSize=(30, 30),
+        flags=cv2.CASCADE_SCALE_IMAGE
+    )
+    for (ex, ey, ew, eh) in eyes:
+        cv2.rectangle(roi_color, (ex, ey), (ex+ew, ey+eh), (0, 255, 0), 2)
 # 將 frame 顯示出來
 cv2.imshow('my window', frame)
 
