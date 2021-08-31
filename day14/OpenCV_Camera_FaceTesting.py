@@ -6,6 +6,9 @@ cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 600)  # 768, 600, 480, 240
 
 # 人臉特徵檔
 face_Cascade = cv2.CascadeClassifier('./xml/haarcascade_frontalface_alt.xml')
+# 眼睛特徵檔
+eyes_Cascade = cv2.CascadeClassifier('./xml/haarcascade_eye.xml')
+
 
 while True:
     ret, frame = cap.read()
@@ -26,6 +29,19 @@ while True:
         for (x, y, w, h) in faces:  # (B  G   R),  2: 線框寬度
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
 
+        # 偵測眼睛
+        roi_gray = gray[y:y + h, x:x + w]  # 人臉區域(灰階)
+        roi_color = frame[y:y + h, x:x + w]  # 人臉區域(彩色)
+        eyes = eyes_Cascade.detectMultiScale(
+            roi_gray,
+            scaleFactor=1.1,
+            minNeighbors=5,
+            minSize=(10, 10),
+            flags=cv2.CASCADE_SCALE_IMAGE
+        )
+        for (ex, ey, ew, eh) in eyes:
+            cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 255, 0), 2)
+    # ----------------------------------------------------------------------------
     # 顯示影像
     cv2.imshow('Michelle', frame)
     # 按下 q 離開迴圈
