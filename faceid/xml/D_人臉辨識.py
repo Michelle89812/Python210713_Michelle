@@ -1,6 +1,6 @@
 # 匯入所需程式庫
 import cv2
-from faceid import A_參數設定
+from faceid.xml import A_參數設定
 
 # 載入 Config.HAAR_FACES 指定的層疊分類器
 face_cascade = cv2.CascadeClassifier(A_參數設定.HAAR_FACES)
@@ -9,7 +9,7 @@ if __name__ == '__main__':
     # 取得攝像鏡頭位置
     cap = cv2.VideoCapture(0)
 
-    # 設定攝像鏡頭捕捉區域
+    # 設定攝像鏡頭捕捉區域A_參數設定 A_參數設定
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 

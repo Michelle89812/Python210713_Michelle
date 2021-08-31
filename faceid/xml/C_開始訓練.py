@@ -1,7 +1,10 @@
+import fnmatch
+import os
+
 import cv2
 import sys
 import numpy as np
-from faceid import A_參數設定
+from faceid.xml import A_參數設定
 
 # 定義 walk_files 函式，
 # 傳入參數:directory 指定尋訪目錄, match=’*’ 設定正則表示式做為搜尋比對用
@@ -22,7 +25,7 @@ def walk_files(directory, match='*'):
 # 定義 prepare_image 函式，傳入參數:filename:圖檔名
 def prepare_image(filename):
     # 傳出灰階化、縮放後的圖片
-    return A_參數設定.resize(cv2.imread(filename, cv2.IMREAD_GRAYSCALE))
+    return A_參數設定 .resize(cv2.imread(filename, cv2.IMREAD_GRAYSCALE))
 
 
 # 定義 normalize 函式，傳入參數:
@@ -73,20 +76,20 @@ if __name__ == '__main__':
     # Read all positive images
 
     # 尋訪 config.POSITIVE_DIR 指定目錄中所有 *.pgm 檔案
-    for filename in walk_files(A_參數設定.POSITIVE_DIR, '*.pgm'):
+    for filename in walk_files(A_參數設定 .POSITIVE_DIR, '*.pgm'):
         # 將 filename 圖檔讀出，灰階化、縮放後的圖片，加入 faces 陣列中
         faces.append(prepare_image(filename))
         # 將 config.POSITIVE_LABEL 標籤，加入 labels 陣列中
-        labels.append(A_參數設定.POSITIVE_LABEL)
+        labels.append(A_參數設定 .POSITIVE_LABEL)
         # 正樣本數量計數器增一
         pos_count += 1
 
     # 尋訪 config.NEGATIVE_DIR 指定目錄中所有 *.pgm 檔案
-    for filename in walk_files(A_參數設定.NEGATIVE_DIR, '*.pgm'):
+    for filename in walk_files(A_參數設定 .NEGATIVE_DIR, '*.pgm'):
         # 將 filename 圖檔讀出，灰階化、縮放後的圖片，加入 faces 陣列中
         faces.append(prepare_image(filename))
         # 將 config.NEGATIVE_LABEL 標籤，加入 labels 陣列中
-        labels.append(A_參數設定.NEGATIVE_LABEL)
+        labels.append(A_參數設定 .NEGATIVE_LABEL)
         # 負樣本數量計數器增一
         neg_count += 1
 
@@ -106,16 +109,16 @@ if __name__ == '__main__':
         sys.exit(0)
 
     # 將產出的訓練集儲存到 config.TRAINING_FILE 指定檔案
-    model.write(A_參數設定.TRAINING_FILE)
+    model.write(A_參數設定 .TRAINING_FILE)
 
     # 列印訓練集已儲存訊息
-    print('訓練集資料已儲存在檔案路徑：', A_參數設定.TRAINING_FILE)
+    print('訓練集資料已儲存在檔案路徑：', A_參數設定 .TRAINING_FILE)
 
     # 取得均值樣本圖片
     mean = model.getMean().reshape(faces[0].shape)
 
     # 將均值樣本圖片正規化後儲存到 Config.MEAN_FILE 指定檔案
-    cv2.imwrite(A_參數設定.MEAN_FILE, normalize(mean, 0, 255, dtype=np.uint8))
+    cv2.imwrite(A_參數設定 .MEAN_FILE, normalize(mean, 0, 255, dtype=np.uint8))
 
     # 取得特徵向量陣列
     eigenvectors = model.getEigenVectors()
@@ -124,10 +127,10 @@ if __name__ == '__main__':
     pos_eigenvector = eigenvectors[:,0].reshape(faces[0].shape)
 
     # 將正樣本圖片正規化後儲存到 Config.POSITIVE_EIGENFACE_FILE 指定檔案
-    cv2.imwrite(A_參數設定.POSITIVE_EIGENFACE_FILE, normalize(pos_eigenvector, 0, 255, dtype=np.uint8))
+    cv2.imwrite(A_參數設定 .POSITIVE_EIGENFACE_FILE, normalize(pos_eigenvector, 0, 255, dtype=np.uint8))
 
     # 取得負樣本圖片
     neg_eigenvector = eigenvectors[:,1].reshape(faces[0].shape)
 
     # 將負樣本圖片正規化後儲存到 Config.NEGATIVE_EIGENFACE_FILE 指定檔案
-    cv2.imwrite(A_參數設定.NEGATIVE_EIGENFACE_FILE, normalize(neg_eigenvector, 0, 255, dtype=np.uint8))
+    cv2.imwrite(A_參數設定 .NEGATIVE_EIGENFACE_FILE, normalize(neg_eigenvector, 0, 255, dtype=np.uint8))

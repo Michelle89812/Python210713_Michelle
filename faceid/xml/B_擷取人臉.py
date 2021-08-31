@@ -2,7 +2,7 @@
 import glob
 import os
 import cv2
-from faceid import A_參數設定
+from faceid.xml import A_參數設定
 
 # 載入 Config.HAAR_FACES 指定的層疊分類器
 haar_faces = cv2.CascadeClassifier(A_參數設定.HAAR_FACES)

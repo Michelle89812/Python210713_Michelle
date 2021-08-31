@@ -1,16 +1,17 @@
+# 參數設定
 import cv2
 
 # 訓練對象人名 ?
 MY_NAME = 'Michelle'
 
 # 定義均值圖檔檔名
-MEAN_FILE = './training/mean.png'
+MEAN_FILE = '../training/mean.png'
 
 # 定義正片圖檔檔名
-POSITIVE_EIGENFACE_FILE = './training/positive_eigenface.png'
+POSITIVE_EIGENFACE_FILE = '../training/positive_eigenface.png'
 
 # 定義負片圖檔檔名
-NEGATIVE_EIGENFACE_FILE = './training/negative_eigenface.png'
+NEGATIVE_EIGENFACE_FILE = '../training/negative_eigenface.png'
 
 # 定義正樣本檔案檔名的前置詞為 positive_
 POSITIVE_FILE_PREFIX = 'positive_'
@@ -25,10 +26,10 @@ POSITIVE_THRESHOLD = 2000.0
 TRAINING_FILE = './training/' + MY_NAME + '_training.xml'
 
 # 正樣本目錄名
-POSITIVE_DIR = './training/positive'
+POSITIVE_DIR = '../training/positive'
 
 # 負樣本目錄名
-NEGATIVE_DIR = './training/negative'
+NEGATIVE_DIR = '../training/negative'
 
 # 辨識結果允收的狀態旗標
 POSITIVE_LABEL = 1
